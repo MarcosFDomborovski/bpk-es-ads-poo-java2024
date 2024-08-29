@@ -1,36 +1,36 @@
-// 14 - Crie uma classe Jogo com atributos nome, genero, e preco. Adicione métodos para iniciar e pausar o jogo.
+// 14 - Defina uma classe Time com atributos como nome, tecnico, e numeroDeJogadores. Adicione métodos para adicionar e remover jogadores.
 
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        Jogo jogo = new Jogo("Red Dead Redemption 2", "Aventura/Ação", 119.99);
         Scanner sc = new Scanner(System.in);
-        System.out.println("Jogo: " + jogo.nome + "\nGênero: " + jogo.genero + "\nPreço: R$" + jogo.preco);
-        System.out.println("");
-        int statusInicio = 0;
-        int statusPause = 0;
+        Time time = new Time("São Paulo", "Rogério Ceni", 12);
         while (true) {
-            System.out.println("O que você deseja fazer ?\n1 - Iniciar o jogo\n2 - Pausar/Despausar o jogo\n3 - Sair");
+            System.out.println("Time: " + time.nome + "\nTécnico: " + time.tecnico + "\nQuantidade de jogadores: " + time.numeroDeJogadores);
+            System.out.println("");
+            System.out.println("O que deseja fazer ?\n1 - Adicionar jogadores\n2 - Remover jogadores\n3 - Sair");
             int choice = sc.nextInt();
             switch (choice) {
                 case 1:
-                    statusInicio = jogo.iniciarJogo(statusInicio);
+                    System.out.println("Quantos jogadores deseja adicionar ?");
+                    int qtdJogadores = sc.nextInt();
+                    time.adicionarJogador(qtdJogadores);
                     break;
                 case 2:
-                    if(statusInicio == 0){
-                        System.out.println("Você precisa iniciar o jogo primeiro!");
-                        break;
-                    }
-                    statusPause = jogo.pausarJogo(statusPause);
+                    System.out.println("Quantos jogadores deseja remover?");
+                    int qtdJogadoresRemover = sc.nextInt();
+                    time.removerJogador(qtdJogadoresRemover);
                     break;
                 case 3:
                     sc.close();
                     System.exit(0);
+                    break;
                 default:
-                    System.out.println("Opção inválida.");
+                    System.out.println("Opção inválida!");
                     break;
             }
         }
+
     }
 }
