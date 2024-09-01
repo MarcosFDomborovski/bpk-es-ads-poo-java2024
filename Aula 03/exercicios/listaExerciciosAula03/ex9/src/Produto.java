@@ -1,14 +1,51 @@
 // 9 - Defina uma classe Produto com atributos como nome, preco, e quantidadeEstoque. Adicione métodos para aumentar e diminuir o estoque.
 public class Produto {
-    String nome;
-    double preco;
-    int quantidadeEstoque;
+    private String nome;
+    private double preco;
+    private int quantidadeEstoque;
 
     public Produto(String nome, double preco, int quantidadeEstoque) {
         this.nome = nome;
         this.preco = preco;
         this.quantidadeEstoque = quantidadeEstoque;
     }
+
+    public void setQtdEstoque(int qtd){
+        if(qtd < 0){
+            System.out.println("Valor inválido.");
+        } else {
+            this.quantidadeEstoque = qtd;
+            System.out.println("Estoque alterado para: " + qtd  + " unidades.");
+        }
+    }
+
+    public void setPreco(double preco){
+        if(preco < 0){
+            System.out.println("Preço inválido");
+        } else {
+            this.preco = preco;
+            System.out.println("Preço alterado para: R$" + preco);
+        }
+    }
+
+    public void setNome(String nome){
+        if(nome != null && !nome.trim().isEmpty()){
+            this.nome = nome;
+            System.out.println("Nome do produto alterado para: " + nome);
+        } else {
+            System.out.println("Nome inválido.");
+        }
+    }
+
+    public String getNome(){
+        return nome;
+    }
+    public double getPreco(){
+        return preco;
+    }
+    public int getQtdEstoque(){
+        return quantidadeEstoque;
+    } 
 
     public void aumentarEstoque(int quantidade) {
         String precoFormatado = String.format("%.2f", preco * quantidade);

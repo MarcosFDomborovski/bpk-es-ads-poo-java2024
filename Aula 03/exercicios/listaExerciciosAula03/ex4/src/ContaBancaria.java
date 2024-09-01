@@ -1,7 +1,7 @@
 // 4 - Crie uma classe ContaBancaria com atributos como numeroConta e saldo. Adicione métodos para depositar e sacar dinheiro.
 public class ContaBancaria {
-    int numeroConta;
-    float saldo;
+    private int numeroConta;
+    private float saldo;
 
     public ContaBancaria(int numeroConta, float saldo) {
         this.numeroConta = numeroConta;
@@ -22,4 +22,11 @@ public class ContaBancaria {
         }
     }
 
+    public float getSaldo() {
+        return saldo;
+    }
+
+    public int getNumeroConta() {
+        return numeroConta;
+    }
 }

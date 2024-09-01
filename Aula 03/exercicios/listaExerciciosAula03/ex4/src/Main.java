@@ -10,7 +10,7 @@ public class Main {
         float valorSaque;
         float valorDeposito;
         
-        System.out.println("Detalhes da conta: " + conta.numeroConta + "\nSaldo: " + conta.saldo + "\n");
+        System.out.println("Detalhes da conta: " + conta.getNumeroConta() + "\nSaldo: " + conta.getSaldo() + "\n");
         while (true) {
             System.out.println("O que deseja fazer ?\n1 - Depositar\n2 - Sacar\n3 - Sair");
             int choice = sc.nextInt();

@@ -9,7 +9,10 @@ public class Main {
         int statusA = 0;
         int statusB = 0;
         while (true) {
-            System.out.println("O que deseja fazer ?\n1 - Abastecer o veículo\n2 - Lavar o veículo\n3 - Sair");
+            System.out.println("Tipo do veículo: " + veiculo.getTipo() + "\nPlaca: " + veiculo.getPlaca() + "\nCor: "
+                    + veiculo.getCor() + "\n");
+            System.out.println(
+                    "O que deseja fazer ?\n1 - Abastecer o veículo\n2 - Lavar o veículo\n3 - Alterar tipo do veículo\n4 - Alterar placa\n5 - Alterar cor\n6 - Sair");
             int choice = sc.nextInt();
             switch (choice) {
                 case 1:
@@ -27,6 +30,21 @@ public class Main {
                     statusB = veiculo.lavar(statusB);
                     break;
                 case 3:
+                    System.out.print("Novo tipo do veículo: ");
+                    String novoTipo = sc.next();
+                    veiculo.setTipo(novoTipo);
+                    break;
+                case 4:
+                    System.out.print("Nova placa: ");
+                    String novaPlaca = sc.next();
+                    veiculo.setPlaca(novaPlaca);
+                    break;
+                case 5:
+                    System.out.print("Nova cor: ");
+                    String novaCor = sc.next();
+                    veiculo.setCor(novaCor);
+                    break;
+                case 6:
                     System.exit(0);
                 default:
                     break;
