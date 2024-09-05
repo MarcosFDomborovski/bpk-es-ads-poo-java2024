@@ -1,14 +1,52 @@
 // 17 -Implemente uma classe Animal com atributos especie, idade, e peso. Adicione métodos para alimentar e dormir.
 public class Animal {
-    String especie;
-    int idade;
-    double peso;
+    private String especie;
+    private int idade;
+    private double peso;
 
     public Animal(String especie, int idade, double peso) {
         this.especie = especie;
         this.idade = idade;
         this.peso = peso;
     }
+
+    public String getEspecie() {
+        return especie;
+    }
+    public int getIdade(){
+        return idade;
+    }
+    public double getPeso(){
+        return peso;
+    }
+
+    public void setPeso(double peso) {
+        if (peso > 0) {
+            this.peso = peso;
+            System.out.println("Peso alterado para: " + peso + " gramas.");
+        } else {
+            System.out.println("Peso inválido.");
+        }
+    }
+
+    public void setIdade(int idade) {
+        if (idade > 0 && idade < 35) {
+            this.idade = idade;
+            System.out.println("Idade alterada para: " + idade + " anos.");
+        } else {
+            System.out.println("Idade inválida.");
+        }
+    }
+
+    public void setEspecie(String nome) {
+        if (nome!= null &&!nome.trim().isEmpty()) {
+            this.especie = nome;
+            System.out.println("Nome do animal alterado para: " + especie);
+        } else {
+            System.out.println("Nome inválido.");
+        }
+    }
+
 
     public void alimentar(int foodChoice) {
         if (idade < 1) {
