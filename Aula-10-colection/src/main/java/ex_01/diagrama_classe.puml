@@ -1,0 +1,20 @@
+@startuml
+
+class Pessoa {
+    - nome: String
+    - idade: int
+    - sexo: char
+    + fazerAniversario(): void
+}
+
+class Aluno extends Pessoa {
+    - matricula: String
+}
+
+class Disciplina {
+    - nome: String
+}
+
+Aluno o-- Disciplina: faz
+
+@enduml
